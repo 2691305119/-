@@ -1,0 +1,87 @@
+.mainf{
+    position: absolute;
+    width: 1200px;
+    height: 400px;
+    margin-top: 50px;
+    left: 180px;
+}
+.l{
+    width: 194px;
+    height: 410px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin-right: 106px;
+    display: inline-block;
+}
+.l img{
+    width: 60px;
+    height: 60px;
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.listf li,.listff,.listfff{
+    list-style-type: none;
+    padding: 20px;
+   
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.listf a:hover{
+    color: rgb(170, 155, 155);
+}
+hr{
+    background-color:black; 
+    height:1.5px; 
+    border:none;
+}
+.r{
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+}
+.work_area{
+    display: none;
+}
+.listff img{
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    text-align: center;
+    border-radius: 5px;
+}
+#file_tx{
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #fde;
+    position: absolute;
+    left: 35px;;
+}
+.password,.conform,.Email,.callname{
+    border-radius: 5px;
+    border: 1px solid #67c23a;
+    height: 25px;
+    width: 320px;
+}
+.btn_Email,.btn_password{
+    background-color:#288cdd;
+    background: #288cdd;
+    border: none;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fde;
+    border-radius: 20px;
+    outline: none;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script src="../resource/js/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+            position : relative;
+            padding-bottom: 230px;
+        }
+        .topbar{
+            height: 40px;
+            background-color: #333;
+            font-size: 14px;
+            line-height: 40px;
+        }
+        .wrapper{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .topbar-list{
+            float: left;
+        }
+        .topbar a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .topbar a:hover{
+            color: #ddd;
+        }
+        .topbar span{
+            color: #fff;
+            margin: 0 2px;
+        }
+        .topbar-info{
+            float: right;
+        }
+        .nav{
+            list-style-type: none;
+        }
+        .nav>li{
+            float: left;
+        }
+        .nav>li>ul>li{
+            display: block;
+            position: relative;
+            right: 10px;
+            border-top: 1px solid black;
+            text-align: center;
+            background-color: #333;    
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".scrDown ul").hide();
+            $(".scrDown").on({
+                mouseover:function(){$(this).children("ul").show();},
+                mouseout:function(){$(this).children("ul").hide();}
+            });
+        })
+    </script>
+</head>
+<body">
+    <div class='topbar'>
+        <div class='wrapper'>
+            <div class='topbar-list'>
+                <ul class="nav">
+                    <li>
+                        <a href='index.html'>首页</a>
+                        <span>|</span>
+                    </li>
+                    <li class="scrDown">
+                        <a href="">Scratch教程</a>
+                        <span>|</span>
+                        <ul>
+                            <li>
+                                <a href="graphic&text.html">图文教程</a>
+                            </li>
+                            <li>
+                                <a href="videoteach.html">视频教程</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="scrDown">
+                        <a href='#'>Scratch社区</a>
+                        <span>|</span>
+                        <ul>
+                            <li>
+                                <a href="#">编程交流</a>
+                            </li>
+                            <li>
+                                <a href="videoteach.html">作品分享</a>
+                            </li>
+                            <li>
+                                <a href='edu.html'>教育咨询</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href='workshow.html'>素材库</a>
+                        <span>|</span>
+                    </li>
+                    <li>
+                        <a href='user.html'>个人中心</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='topbar-info'>
+                <a href='login.html'>登录</a>
+                <span>|</span>
+                <a href='register.html'>注册</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

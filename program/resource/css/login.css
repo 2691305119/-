@@ -1,0 +1,100 @@
+body{   
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: auto;
+}
+.backg{
+    height: 720px;
+}
+.backg img{
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.system{
+    margin: 8px;
+    padding: 8px;
+}
+
+.login{
+    width: 400px;
+    height: 310px;
+    margin: 200px auto;
+    border: 2px solid black;
+    border-radius: 20px;;
+    background: black;
+    opacity: 0.6;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    position: absolute;
+    top: 5px;
+    left: 565px;
+    
+}
+
+.login *{
+    display: block;
+}
+
+.lable{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    color: #60a3bc;
+    z-index: -1;
+}
+
+.pass_lable{
+    top: 180px;
+}
+
+.input{
+    width: 340px;
+    height: 30px;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    background-color: inherit;
+    border:none;
+    border-bottom:1px solid #60a3bc;
+    color: white;
+    outline: none;
+}
+
+.pass_input{
+    top: 180px;
+}
+
+.input:focus~label,.input:valid ~ label{
+    top: 80px;
+    font-size: 15px;
+}
+
+.pass_input:focus~label,.pass_input:valid ~ label{
+    top: 160px;
+}
+
+.submit{
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: 240px;
+    left: 60px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: #60a3bc;
+
+}
+
+.regist_submit{
+    left: 220px;
+}
+
