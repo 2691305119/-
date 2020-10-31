@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料</title>
+    <script src="../../resource/js/jquery.min.js"></script>
+    <script src="../../resource/js/person.js"></script>
+    <script src="../../common/top-footer.js"></script>
+    <link rel="stylesheet" href="../../resource/css/person.css">
+    <script type="text/javascript">
+        $(function () {
+            $("#mf_btn").click(function () {
+                alert("修改成功");
+                $("#mf").submit();
+            })
+        })
+    </script>
+</head>
+<body  style="background-color: #EDF1F7; height: 491px; ">
+    <div class="mainf wrapper">
+        <div class="l">
+            <div style="height:50px;">
+                <span>个人中心</span>
+            </div>
+            <hr>
+            <div style="height:130px">
+                <a><img src="../../resource/img/tx.jpg" alt=""></a>
+                <br>
+                <label class="cal">${obj.userName}</label>
+            </div>
+            <hr>
+            <div>
+                <ul class="listf">
+                   <li><a href="#">我的作品</a></li>
+                   <li><a href="#">我的收藏</a></li>
+                   <li><a href="#">个人资料</a></li>
+                   <li><a href="#">修改密码</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="r">
+            <!-- 我的作品 -->
+            <div class="work_submit">
+                <input id="udd_work" type="file">
+            </div>
+            <!-- 我的收藏 -->
+            <div class="my_collect">
+                <input id="udd_work" type="">
+            </div>
+            <!-- 个人资料 -->
+            <div class="user_info">
+                <form action="../../user/toUpdate" id="mf" method="post">
+                    <ul class="listff">
+
+                        <li style="position: absolute; top: 180px; left: 20px;">
+                            <label  style="font-size: 18px; font-weight: 600;">昵称:</label>
+                            <input class="callname" type="text" id="username" name="userName" autocomplete="off" value="${obj.userName}">
+                        </li>
+                        <li style="position: absolute; top: 210px; left: 20px;">
+                            <label style="font-size: 18px; font-weight: 600;">电话:</label>
+                            <input style="border-radius: 5px;border: 1px solid #67c23a;height: 25px;width: 320px;" type="text" id="phone" name="phone" autocomplete="off" value="${obj.phone}">
+                        </li>
+                        <li style="position: absolute; top: 240px; left: 20px;">
+                            <label  style="font-size: 18px; font-weight: 600;">邮箱:</label>
+                            <input class="Email" type="text" id="email" name="email" autocomplete="off" value="${obj.email}">
+                        </li>
+                        <li style="position: absolute; top: 320px; left: 100px;">
+                            <button id="mf_btn" class="btn_Email">修&nbsp;改</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+           <!-- 修改密码 -->
+           <div class="updata_password">
+                <ul class="listfff">
+                    <li style="position: absolute; top: 120px; left: 40px;">
+                        <label  style="font-size: 18px; font-weight: 600;">旧密码:</label>
+                        <input style="border-radius: 5px;border: 1px solid #67c23a;height: 25px;width: 320px;" id="jiu" type="password" placeholder="请输入原密码">
+                        <input type="hidden" id="yuan" value="${obj.password}">
+                    </li>
+                    <li style="position: absolute; top: 160px; left: 40px;">
+                        <label style="font-size: 18px; font-weight: 600;">新密码:</label>
+                        <input class="password" id="xin" type="password" placeholder="密码由英文字母和数字组成的6-12位字符">
+                    </li>
+                    <li style="position: absolute; top: 200px; left: 22px;">
+                        <label style="font-size: 18px; font-weight: 600;">确认密码:</label>
+                        <input class="conform" id="que" type="password"  placeholder="请确认你的密码">
+                    </li>
+                    <li style="position: absolute; top: 240px; left: 160px;">
+                        <button class="btn_password" id="sub_btn" type="submit">修&nbsp;改&nbsp;密&nbsp;码</button>
+                    </li>
+               </ul>
+           </div>
+        </div>
+    </div>
+</body>
+<script>
+    $("#sub_btn").click(function(){
+        var yuan = $("#yuan").val();
+        var jiu = $("#jiu").val();
+        var xin = $("#xin").val();
+        var que = $("#que").val();
+        if(jiu==null||jiu==''){
+            alert("旧密码不能为空");
+            return false;
+        }
+        if(xin==null||xin==''){
+            alert("新密码不能为空");
+            return false;
+        }
+        if(que==null||que==''){
+            alert("确认密码不能为空");
+            return false;
+        }
+        if(jiu!=yuan){
+            alert("旧密码输入不正确");
+            return false;
+        }
+        if(xin==yuan){
+            alert("新密码和旧密码不能一样");
+            return false;
+        }
+        if(xin!=que){
+            alert("新密码和确认密码输入不一致");
+            return false;
+        }
+        $.ajax({
+            type:"POST",
+            url:"../../user/upass.do",
+            data:{
+                "password":xin
+            },
+            success:function (result) {
+                if(result.res==0){
+                    alert("请登录");
+                }else{
+                    alert("修改成功,请重新登录");
+                }
+                top.location.href = "../../login/uLogin";
+            }
+        });
+    });
+</script>
+</html>
